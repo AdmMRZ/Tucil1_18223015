@@ -2,11 +2,8 @@
 # NIM : 18223015
 
 ## Deskripsi
-Program mencari penempatan satu queen (`#`) per baris sedemikian rupa sehingga:
-- Setiap queen menempati region yang berbeda.
-- Tidak ada dua queen yang bersebelahan secara vertikal (selisih kolom ≤ 1 antar baris berturut-turut).
-
-Solusi dicari menggunakan algoritma **brute force** dengan pendekatan permutasi.
+Program ini menyelesaikan permainan Queens menggunakan algoritma Brute Force. 
+Tujuannya mencari posisi 1 Queen per baris, kolom, dan region warna, dengan syarat tidak ada dua Queen yang saling bersentuhan (baik tegak lurus maupun diagonal).
 
 ## Requirement
 - Python 3.x
