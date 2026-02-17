@@ -1,0 +1,3 @@
+Tidak ada solusi.
+0.00 ms
+Jumlah iterasi: 120
