@@ -1,3 +1,4 @@
 @echo off
-python ../src/main.py
+cd ..
+python src/main.py
 pause
