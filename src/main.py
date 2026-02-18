@@ -20,22 +20,44 @@ def main():
     n = len(cb)
     qpos = list(range(n))
     
+    count = input("Tampilkan solusi setiap berapa iterasi? (0 untuk tidak menampilkan): ")
+    try:
+        count = int(count)
+    except ValueError:
+        print("Input tidak valid. Menggunakan default (0).")
+        count = 0
+    if count < 0:
+        print("Input tidak valid. Menggunakan default (0).")
+        count = 0
+    if count > 10000:
+        print("Input terlalu besar. Menggunakan max (10000).")
+        count = 10000
+    
+    print("Algoritma akan dimulai dalam 3 detik")
+    for i in range(3, 0, -1):
+        print(i, end=" ", flush=True)
+        time.sleep(1)
+    print()
+    
     start = time.time()
-    res, iter = algo.getsolution(cb, qpos)
+    res, iter = algo.getsolution(cb, qpos, count)
     end = time.time()
     ms = (end- start) * 1000
     lines = None
     
     if res:
+        print()
+        print("Solusi ditemukan:")
         lines = util.printboard(cb, res)
         print(f"{ms:.2f} ms")
         print(f"Jumlah iterasi: {iter}")
     else:
         lines = None
+        print()
         print("Tidak ada solusi.")
         print(f"{ms:.2f} ms")
         print(f"Jumlah iterasi: {iter}")
-        
+    print()
     pil = input("Simpan solusi? (y/n): ")
     if pil.lower() != 'y':
         return
