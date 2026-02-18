@@ -33,7 +33,7 @@ def main():
         print("Input terlalu besar. Menggunakan max (10000).")
         count = 10000
     
-    print("Algoritma akan dimulai dalam 3 detik")
+    print("Algoritma akan dimulai dalam 3 detik...")
     for i in range(3, 0, -1):
         print(i, end=" ", flush=True)
         time.sleep(1)
@@ -58,10 +58,10 @@ def main():
         print(f"{ms:.2f} ms")
         print(f"Jumlah iterasi: {iter}")
     print()
+    
     pil = input("Simpan solusi? (y/n): ")
     if pil.lower() != 'y':
         return
-    
     os.makedirs("test",exist_ok=True)
     solpath = os.path.join("test", name + "_sol.txt")
     with open(solpath, 'w') as f:

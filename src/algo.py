@@ -8,7 +8,7 @@ def permutate(qpos, idx, cb, count):
     if idx== len(qpos):
         iter+= 1
         n = len(cb)
-        if iter% count == 0:
+        if count > 0 and iter% count == 0:
             util.printboard(cb, qpos)
             print(f"Iterasi: {iter}")
         if valid(cb, qpos):
